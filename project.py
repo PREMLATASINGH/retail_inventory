@@ -1,5 +1,7 @@
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 np.random.seed(42)
 
@@ -42,4 +44,11 @@ print(df.groupby("product_name")["slow_moving"].mean())
 print(df[df["slow_moving"]].head(10))
 print(df[df["reorder_flag"]].head(10))
 print(df.groupby("product_name")[["stock_level","avg_daily_sales"]].mean().sort_values("avg_daily_sales", ascending=False))
+plt.figure(figsize=(10,6))
+sns.scatterplot(data=df, x="avg_daily_sales", y="stock_level", hue="slow_moving", alpha=0.6)
+plt.title("Stock Level vs Daily Sales (2000 Products)")
+plt.xlabel("Average Daily Sales")
+plt.ylabel("Stock Level")
+plt.show()
+
 
