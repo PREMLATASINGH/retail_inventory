@@ -41,3 +41,5 @@ print(df["reorder_flag"].value_counts())
 print(df.groupby("product_name")["slow_moving"].mean())
 print(df[df["slow_moving"]].head(10))
 print(df[df["reorder_flag"]].head(10))
+print(df.groupby("product_name")[["stock_level","avg_daily_sales"]].mean().sort_values("avg_daily_sales", ascending=False))
+
