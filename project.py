@@ -34,3 +34,4 @@ df["reorder_flag"] = df["stock_level"] < (df["avg_daily_sales"] * 14)
 
 df.head()
 print(df.head())
+print(df.info())
