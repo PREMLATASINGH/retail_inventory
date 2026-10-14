@@ -50,5 +50,10 @@ plt.title("Stock Level vs Daily Sales (2000 Products)")
 plt.xlabel("Average Daily Sales")
 plt.ylabel("Stock Level")
 plt.show()
+plt.figure(figsize=(10,5))
+sns.histplot(df["days_remaining"], bins=40, kde=True)
+plt.title("Distribution of Days of Inventory Remaining")
+plt.show()
+
 
 
